@@ -33,6 +33,9 @@ npm run dev
 
 本番ビルドと自動確認は `npm test` で実行できます。
 
-## 公開予定
+## 公開URL
 
-GitHubでソースコードを公開し、Vercelの無料URLで一般公開する予定です。ローカルでのリンク・表示・掲載内容の確認は完了しており、外部公開のみ承認待ちです。
+- Webサイト：https://sho-design-site.vercel.app
+- ソースコード：https://github.com/shoharu09030930-beep/sho-design-site
+
+Vercelの無料Hobby環境で一般公開しています。公開前後に本番ビルド、自動確認、PC・スマートフォン表示、ページ遷移、主要画像、外部リンクを確認しました。
