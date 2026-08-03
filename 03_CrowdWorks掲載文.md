@@ -31,7 +31,7 @@ https://sho-design-site.vercel.app
 2. `outputs/CrowdWorks/02_制作実績一覧_PC.png`
 3. `outputs/CrowdWorks/03_トップページ_スマートフォン.png`
 
-3点目はスマートフォン表示の修正版を再公開した後に撮り直した画像を使用します。
+3点目はスマートフォン表示の修正版を再公開した後、公開URLから撮り直した画像です。
 
 ## 詳細｜2048文字以内
 
