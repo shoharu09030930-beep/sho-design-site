@@ -778,7 +778,9 @@ h2 {
 }
 
 .works-page-list .work-image-link {
+  min-width: 0;
   min-height: 520px;
+  aspect-ratio: auto;
 }
 
 .site-as-work {
@@ -1266,6 +1268,7 @@ h2 {
 
   .works-page-list .work-image-link {
     min-height: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .work-detail-heading > div:first-child {
