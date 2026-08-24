@@ -41,3 +41,10 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# Local project management documents
+/00_案件インデックス.md
+/01_現在地・次の作業.md
+/02_タスク台帳.md
+/03_CrowdWorks掲載文.md
+/作業ログ.md
