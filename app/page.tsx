@@ -98,6 +98,11 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="home-web-works section-shell" aria-labelledby="home-web-title">
+          <div><p className="eyebrow">WEB DESIGN STUDIES</p><h2 id="home-web-title">6つの業種を、<br />6つの見せ方で。</h2></div>
+          <div><p>BtoB、カフェ、サロン、学習教室、建築、AI SaaS。目的と閲覧者に合わせて、構成から作り分けたWebサイト自主制作です。</p><Link className="button button-outline" href="/web-works">Web制作6件を見る</Link></div>
+        </section>
+
         <section className="approach-section" id="approach" aria-labelledby="approach-title">
           <div className="section-shell approach-layout">
             <div className="approach-intro">

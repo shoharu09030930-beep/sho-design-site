@@ -10,6 +10,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-nav">
           <Link href="/works">制作実績</Link>
+          <Link href="/web-works">Webサイト自主制作</Link>
           <Link href="/about">この研究室について</Link>
           <a href="https://note.com/sho_03_lab" target="_blank" rel="noreferrer">note</a>
           <a href="https://x.com/sho_03_lab" target="_blank" rel="noreferrer">X</a>

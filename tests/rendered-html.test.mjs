@@ -11,6 +11,13 @@ const generatedPages = [
   "works/data-cleaning.html",
   "works/public-research.html",
   "works/sales-dashboard.html",
+  "web-works.html",
+  "web-works/nexa-operations.html",
+  "web-works/mugi-to-hi.html",
+  "web-works/sui.html",
+  "web-works/hop-step-lab.html",
+  "web-works/ma-studio.html",
+  "web-works/flowpilot.html",
   "about.html",
 ];
 
@@ -45,6 +52,21 @@ test("work pages disclose that the projects are self-initiated", async () => {
   }
 });
 
+test("web design studies have six distinct static pages and fictional-project disclosure", async () => {
+  const pages = await Promise.all(
+    generatedPages
+      .filter((page) => page.startsWith("web-works/") && page.endsWith(".html"))
+      .map((page) => readFile(new URL(page, generatedRoot), "utf8")),
+  );
+
+  assert.equal(pages.length, 6);
+  for (const html of pages) {
+    assert.match(html, /架空/);
+    assert.match(html, /自主制作/);
+    assert.match(html, /href="\/(?:web-works|works)"/);
+  }
+});
+
 test("includes the public visual assets used by the site", async () => {
   const assets = [
     "og.png",
@@ -52,6 +74,16 @@ test("includes the public visual assets used by the site", async () => {
     "assets/work-data-cleaning-main.png",
     "assets/work-research-main.png",
     "assets/work-dashboard-main.png",
+    "assets/web-works/mugi-to-hi-hero.png",
+    "assets/web-works/sui-hero.png",
+    "assets/web-works/ma-studio-hero.png",
+    "assets/web-works/ma-light-well-v2.png",
+    "assets/web-works/ma-kiosk-v2.png",
+    "assets/web-works/hop-discovery-v2.png",
+    "assets/web-works/hop-experiment-v2.png",
+    "assets/web-works/hop-presentation-v2.png",
+    "assets/web-works/mugi-counter-v2.png",
+    "assets/web-works/sui-ritual-v2.png",
   ];
 
   await Promise.all(
