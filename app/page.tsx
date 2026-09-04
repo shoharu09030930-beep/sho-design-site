@@ -23,11 +23,11 @@ export default function Home() {
               <strong>確認できて、使い続けられる形</strong>に整えます。
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="#works">
-                制作実績を見る
+              <Link className="button button-primary" href="/contact">
+                相談内容を整理する
               </Link>
-              <Link className="text-link" href="#approach">
-                仕事の進め方 <span aria-hidden="true">→</span>
+              <Link className="text-link" href="/services">
+                サービスと料金を見る <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -72,6 +72,11 @@ export default function Home() {
                   </ul>
                 </article>
               ))}
+            </div>
+            <div className="section-link-row">
+              <Link className="button button-outline" href="/services">
+                対応内容と料金目安を見る
+              </Link>
             </div>
           </div>
         </section>
@@ -139,6 +144,17 @@ export default function Home() {
               <a href="https://x.com/sho_03_lab" target="_blank" rel="noreferrer">X <span aria-hidden="true">↗</span></a>
               <a href="https://www.youtube.com/@sho_03_lab" target="_blank" rel="noreferrer">YouTube <span aria-hidden="true">↗</span></a>
             </div>
+          </div>
+        </section>
+
+        <section className="contact-band section-shell" aria-labelledby="contact-band-title">
+          <div>
+            <p className="eyebrow">CONSULTATION</p>
+            <h2 id="contact-band-title">まだ内容が固まっていなくても大丈夫です。</h2>
+          </div>
+          <div>
+            <p>現在の作業と、どう変えたいかを伺い、対応できる範囲と進め方を整理します。</p>
+            <Link className="button button-primary" href="/contact">相談内容を整理する</Link>
           </div>
         </section>
       </main>

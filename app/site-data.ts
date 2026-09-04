@@ -16,28 +16,70 @@ export type Work = {
   note: string;
 };
 
-export const services = [
+export type ServiceOffer = {
+  slug: string;
+  title: string;
+  description: string;
+  examples: string[];
+  price: string;
+  priceLabel: string;
+  suitableFor: string[];
+  deliverables: string[];
+  note: string;
+};
+
+export const serviceOffers: ServiceOffer[] = [
   {
-    title: "データ整理",
-    description: "表記ゆれや重複、空欄が混ざった表を、確認しやすい形に整えます。",
-    examples: ["Excel・CSV", "重複・形式統一", "処理ログ"],
+    slug: "automation",
+    title: "業務自動化",
+    description: "転記・集計・情報収集など、繰り返し発生する手作業を整理し、安全に減らせる仕組みを作ります。",
+    examples: ["データ転記", "定期集計", "Web情報収集"],
+    price: "30,000円〜",
+    priceLabel: "小規模な自動化",
+    suitableFor: ["同じ転記や集計を何度も行っている", "作業手順は決まっているが時間がかかる", "どこまで自動化できるか相談したい"],
+    deliverables: ["現行作業と自動化範囲の整理", "自動処理の実装", "動作確認と使い方の記録"],
+    note: "対象サイトの規約や画面仕様により、自動化できない操作があります。",
   },
   {
-    title: "公開情報リサーチ",
-    description: "公式情報を優先し、確認元URLと確認日まで追える一覧を作ります。",
-    examples: ["Web調査", "一覧化・比較", "出典管理"],
+    slug: "tools",
+    title: "業務ツール作成",
+    description: "Excel・CSV・ブラウザ上のデータを扱う、小さな専用ツールや入力・確認画面を作ります。",
+    examples: ["Excel・CSV", "入力支援", "集計・変換"],
+    price: "30,000円〜",
+    priceLabel: "小規模な業務ツール",
+    suitableFor: ["既存の表をもっと使いやすくしたい", "定型処理をボタン一つにまとめたい", "市販ソフトでは機能が合わない"],
+    deliverables: ["必要な入力・処理・出力の整理", "ツール本体", "確認方法・操作手順"],
+    note: "利用人数、対応OS、外部サービス連携の有無で金額が変わります。",
   },
   {
-    title: "集計・簡易自動化",
-    description: "繰り返す集計や転記を、更新できる表や小さな仕組みに変えます。",
-    examples: ["Excel関数", "ダッシュボード", "入力支援"],
+    slug: "apps",
+    title: "小規模アプリ作成",
+    description: "業務の流れに合わせた、ブラウザで使える小規模な管理・検索・計算アプリを作ります。",
+    examples: ["管理画面", "検索・計算", "データ保存"],
+    price: "50,000円〜",
+    priceLabel: "小規模なWebアプリ",
+    suitableFor: ["複数の情報を一つの画面で管理したい", "入力から結果確認までをまとめたい", "まず小さな試作から始めたい"],
+    deliverables: ["画面と機能の整理", "アプリの実装", "表示・操作・例外時の確認"],
+    note: "ログイン、決済、大規模データベースなどは内容を確認して個別に判断します。",
   },
   {
-    title: "小規模ツール・Web制作",
-    description: "目的と使う場面を整理し、必要な機能に絞った画面を実装します。",
-    examples: ["HTML・CSS", "レスポンシブ", "表示・動作確認"],
+    slug: "websites",
+    title: "Webサイト・LP制作",
+    description: "目的と閲覧者を整理し、スマートフォンでも見やすいWebサイトやLPを制作・修正します。",
+    examples: ["事業サイト", "LP", "既存ページ修正"],
+    price: "30,000円〜",
+    priceLabel: "1ページのWebサイト・LP",
+    suitableFor: ["サービスを説明するページが必要", "既存サイトの一部を改善したい", "内容整理から一緒に進めたい"],
+    deliverables: ["掲載内容と構成の整理", "PC・スマートフォン対応", "公開前の表示・リンク確認"],
+    note: "原稿、写真、ページ数、予約・決済等の機能により金額が変わります。",
   },
 ];
+
+export const services = serviceOffers.map(({ title, description, examples }) => ({
+  title,
+  description,
+  examples,
+}));
 
 export const works: Work[] = [
   {

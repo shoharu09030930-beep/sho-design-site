@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/#services", label: "サービス" },
+  { href: "/services", label: "サービス・料金" },
   { href: "/works", label: "制作実績" },
   { href: "/web-works", label: "Web制作" },
   { href: "/#approach", label: "進め方" },
-  { href: "/about", label: "この研究室について" },
+  { href: "/contact", label: "相談する" },
 ];
 
 export function SiteHeader() {

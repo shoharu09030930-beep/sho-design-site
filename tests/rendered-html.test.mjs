@@ -19,6 +19,9 @@ const generatedPages = [
   "web-works/ma-studio.html",
   "web-works/flowpilot.html",
   "about.html",
+  "services.html",
+  "contact.html",
+  "privacy.html",
 ];
 
 test("generates every public page as static HTML", async () => {
@@ -38,6 +41,31 @@ test("home page includes the brand, core works, and social links", async () => {
   assert.match(html, /https:\/\/note\.com\/sho_03_lab/);
   assert.match(html, /https:\/\/x\.com\/sho_03_lab/);
   assert.match(html, /https:\/\/www\.youtube\.com\/@sho_03_lab/);
+});
+
+test("services page publishes four offers with reference prices", async () => {
+  const html = await readFile(new URL("services.html", generatedRoot), "utf8");
+
+  assert.match(html, /業務自動化/);
+  assert.match(html, /業務ツール作成/);
+  assert.match(html, /小規模アプリ作成/);
+  assert.match(html, /Webサイト・LP制作/);
+  assert.match(html, /30,000円〜/);
+  assert.match(html, /50,000円〜/);
+  assert.match(html, /参考料金（税込）/);
+});
+
+test("contact page includes intake fields and the sensitive-data warning", async () => {
+  const html = await readFile(new URL("contact.html", generatedRoot), "utf8");
+
+  assert.match(html, /現在困っていること/);
+  assert.match(html, /どのような状態にしたいですか/);
+  assert.match(html, /予算の目安/);
+  assert.match(html, /返信先メールアドレス/);
+  assert.match(html, /1FAIpQLSft6ZenKWkUz-qHnN-hZ6MHgW2nhERPYTcVAYEHdTdDguA_hg/);
+  assert.match(html, /Googleフォームで確認する/);
+  assert.match(html, /パスワード、認証コード、顧客名簿、社外秘資料/);
+  assert.match(html, /個人情報の取り扱い/);
 });
 
 test("work pages disclose that the projects are self-initiated", async () => {
