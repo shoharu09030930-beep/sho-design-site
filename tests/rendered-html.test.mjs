@@ -95,6 +95,16 @@ test("web design studies have six distinct static pages and fictional-project di
   }
 });
 
+test("web design studies list the public steak LP without bundling its photos", async () => {
+  const html = await readFile(new URL("web-works.html", generatedRoot), "utf8");
+
+  assert.match(html, /7つの目的に/);
+  assert.match(html, /はらぺこステーキ/);
+  assert.match(html, /自主制作・架空店舗/);
+  assert.match(html, /https:\/\/harapeko-steak-lp-sample\.shoharu-0903-0930\.chatgpt\.site\//);
+  assert.doesNotMatch(html, /steak-photo|hamburg-photo/);
+});
+
 test("includes the public visual assets used by the site", async () => {
   const assets = [
     "og.png",

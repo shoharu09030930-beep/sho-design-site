@@ -908,6 +908,11 @@ h2 {
 .web-work-flow .web-work-art i:nth-child(1) { top: 22%; left: 8%; }
 .web-work-flow .web-work-art i:nth-child(2) { top: 43%; left: 38%; border-color: #7a55dd; }
 .web-work-flow .web-work-art i:nth-child(3) { top: 24%; right: 7%; }
+.web-work-steak { background: radial-gradient(circle at 50% 45%, #5c1d12 0 18%, transparent 19%), linear-gradient(145deg, #f4c34f 0 38%, #e34827 38% 100%); }
+.web-work-steak .web-work-art { background: linear-gradient(150deg, rgba(255,255,255,.06), transparent 45%); }
+.web-work-steak .web-work-art i:nth-child(1) { top: 10%; left: 20%; width: 62%; height: 70%; border: 11px solid #25201c; border-radius: 50%; background: #40352e; box-shadow: 0 17px 26px rgba(53,19,11,.28); transform: rotate(-8deg); }
+.web-work-steak .web-work-art i:nth-child(2) { top: 21%; left: 31%; width: 43%; height: 43%; border: 3px solid #361109; border-radius: 48% 52% 43% 57%; background: repeating-linear-gradient(28deg, transparent 0 15px, rgba(53,13,7,.48) 15px 19px), radial-gradient(circle at 64% 36%, #ffb15d 0 4%, transparent 5%), #9f2d19; transform: rotate(-12deg); box-shadow: inset -11px -12px 0 rgba(80,18,11,.28), 0 7px 12px rgba(38,11,7,.34); }
+.web-work-steak .web-work-art i:nth-child(3) { top: 25%; left: 57%; width: 7%; height: 22%; border-radius: 999px; background: rgba(255,225,167,.58); transform: rotate(-36deg); filter: blur(1px); }
 .web-work-mugi::after, .web-work-sui::after { background: linear-gradient(180deg, transparent 45%, rgba(57,42,30,.64)); }
 .web-work-ma::after { background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.72)); }
 
