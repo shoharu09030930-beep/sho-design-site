@@ -5,13 +5,4 @@ export const webWorks = [
   { slug: "hop-step-lab", number: "04", title: "HOP STEP LAB", industry: "子ども向け学習教室", tone: "明るい・好奇心・安心", theme: "hop" },
   { slug: "ma-studio", number: "05", title: "間 / MA STUDIO", industry: "建築・インテリア事務所", tone: "静謐・編集的・知的", theme: "ma", image: "/assets/web-works/ma-studio-hero.png" },
   { slug: "flowpilot", number: "06", title: "FLOWPILOT", industry: "AI SaaS", tone: "先進的・軽快・精密", theme: "flow" },
-  {
-    slug: "harapeko-steak",
-    number: "07",
-    title: "はらぺこステーキ",
-    industry: "ステーキ・ハンバーグ店LP",
-    tone: "食欲・ボリューム・来店導線",
-    theme: "steak",
-    externalUrl: "https://harapeko-steak-lp-sample.shoharu-0903-0930.chatgpt.site/",
-  },
 ] as const;
