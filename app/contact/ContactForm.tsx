@@ -9,7 +9,7 @@ type ContactFormProps = {
 
 export function ContactForm({ contactUrl }: ContactFormProps) {
   const serviceSelect = useRef<HTMLSelectElement>(null);
-  const [prepared, setPrepared] = useState(false);
+  const [preparedUrl, setPreparedUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const selected = new URLSearchParams(window.location.search).get("service") ?? "";
@@ -37,12 +37,17 @@ export function ContactForm({ contactUrl }: ContactFormProps) {
     destination.searchParams.set("entry.343307416", String(form.get("timing") ?? ""));
     destination.searchParams.set("entry.936931036", String(form.get("materials") ?? ""));
 
-    window.open(destination.toString(), "_blank", "noopener,noreferrer");
-    setPrepared(true);
+    const url = destination.toString();
+    setPreparedUrl(url);
+    try {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch {
+      // The same-tab link remains available if this browser rejects popups.
+    }
   }
 
   return (
-    <form className="contact-form" onSubmit={openContactForm}>
+    <form className="contact-form" onSubmit={openContactForm} onChange={() => setPreparedUrl(null)}>
       <div className="field-row">
         <label>
           <span>お名前・事業者名</span>
@@ -112,10 +117,15 @@ export function ContactForm({ contactUrl }: ContactFormProps) {
         <button className="button button-primary" type="submit">Googleフォームで確認する</button>
       </div>
       <p className="form-status" role="status" aria-live="polite">
-        {prepared
-          ? "入力内容を引き継いだGoogleフォームを開きました。内容を確認して送信してください。"
+        {preparedUrl
+          ? "確認用の入力内容を準備しました。Googleフォームが開いた場合は、内容を確認して送信してください。まだ相談は送信されていません。"
           : "この画面だけでは送信されません。次の画面で内容を確認してから送信できます。"}
       </p>
+      {preparedUrl && (
+        <p className="form-status">
+          開かない場合は、<a className="text-link" href={preparedUrl} referrerPolicy="no-referrer">このタブでGoogleフォームを開く</a>こともできます。入力内容は引き継がれます。
+        </p>
+      )}
     </form>
   );
 }
