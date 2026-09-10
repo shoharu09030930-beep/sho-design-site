@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AnalyticsConsent } from "@/app/components/AnalyticsConsent";
 
 const publicUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -52,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>{children}<AnalyticsConsent /></body>
     </html>
   );
 }

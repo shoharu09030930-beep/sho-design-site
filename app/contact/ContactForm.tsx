@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { serviceOffers } from "@/app/site-data";
+import { trackAction } from "@/app/analytics";
 
 type ContactFormProps = {
   contactUrl?: string;
@@ -39,6 +40,8 @@ export function ContactForm({ contactUrl }: ContactFormProps) {
 
     const url = destination.toString();
     setPreparedUrl(url);
+    // This counts a handoff attempt, NOT a completed inquiry. Never send url or form.
+    trackAction("consultation_form_open");
     try {
       window.open(url, "_blank", "noopener,noreferrer");
     } catch {
@@ -123,7 +126,7 @@ export function ContactForm({ contactUrl }: ContactFormProps) {
       </p>
       {preparedUrl && (
         <p className="form-status">
-          開かない場合は、<a className="text-link" href={preparedUrl} referrerPolicy="no-referrer">このタブでGoogleフォームを開く</a>こともできます。入力内容は引き継がれます。
+          開かない場合は、<a className="text-link" href={preparedUrl} referrerPolicy="no-referrer" onClick={() => trackAction("consultation_form_fallback")}>このタブでGoogleフォームを開く</a>こともできます。入力内容は引き継がれます。
         </p>
       )}
     </form>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AnalyticsSettingsButton } from "@/app/components/AnalyticsConsent";
 
 export function SiteFooter() {
   return (
@@ -15,6 +16,7 @@ export function SiteFooter() {
           <Link href="/about">この研究室について</Link>
           <Link href="/contact">相談する</Link>
           <Link href="/privacy">個人情報の取り扱い</Link>
+          <AnalyticsSettingsButton />
           <a href="https://note.com/sho_03_lab" target="_blank" rel="noreferrer">note</a>
           <a href="https://x.com/sho_03_lab" target="_blank" rel="noreferrer">X</a>
           <a href="https://www.youtube.com/@sho_03_lab" target="_blank" rel="noreferrer">YouTube</a>
