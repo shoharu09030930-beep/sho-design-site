@@ -4,6 +4,8 @@ import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { WorkCard } from "@/app/components/WorkCard";
 import { services, works } from "@/app/site-data";
+import { webWorks } from "@/app/web-works/data";
+import { homeWebPreviews } from "@/app/web-works/home-previews";
 
 export default function Home() {
   return (
@@ -103,9 +105,43 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-web-works section-shell" aria-labelledby="home-web-title">
-          <div><p className="eyebrow">WEB DESIGN STUDIES</p><h2 id="home-web-title">6つの業種を、<br />6つの見せ方で。</h2></div>
-          <div><p>BtoB、カフェ、サロン、学習教室、建築、AI SaaS。目的と閲覧者に合わせて、構成から作り分けたWebサイト自主制作です。</p><Link className="button button-outline" href="/web-works">Web制作6件を見る</Link></div>
+        <section className="home-web-works section-shell" id="web-studies" aria-labelledby="home-web-title">
+          <div className="home-web-heading">
+            <div>
+              <p className="eyebrow">WEB DESIGN STUDIES</p>
+              <h2 id="home-web-title">6つの業種を、<br />6つの見せ方で。</h2>
+            </div>
+            <p>BtoB、カフェ、サロン、学習教室、建築、AI SaaS。目的と閲覧者に合わせて、構成から作り分けたWebサイト自主制作です。</p>
+          </div>
+          <ul className="home-web-grid">
+            {webWorks.map((work) => {
+              const preview = homeWebPreviews[work.slug];
+              return (
+                <li key={work.slug}>
+                  <Link className="home-web-card" href={`/web-works/${work.slug}`}>
+                    <div className="home-web-image">
+                      <Image
+                        src={`/assets/web-works/previews/${work.slug}.webp`}
+                        alt={preview.alt}
+                        width={1108}
+                        height={769}
+                        sizes="(max-width: 560px) calc(100vw - 80px), (max-width: 712px) calc((100vw - 120px) / 2), (max-width: 820px) 296px, (max-width: 1000px) calc((100vw - 168px) / 2), (max-width: 1208px) calc((100vw - 192px) / 3), 339px"
+                      />
+                    </div>
+                    <div className="home-web-caption">
+                      <p className="home-web-industry">{work.industry}</p>
+                      <h3>{work.title}<span aria-hidden="true">↗</span></h3>
+                      <p className="home-web-detail">{preview.detail}</p>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="home-web-footer">
+            <p>すべて架空の事業者を題材にした自主制作です。</p>
+            <Link className="text-link" href="/web-works">Web制作6件の一覧へ <span aria-hidden="true">→</span></Link>
+          </div>
         </section>
 
         <section className="approach-section" id="approach" aria-labelledby="approach-title">
