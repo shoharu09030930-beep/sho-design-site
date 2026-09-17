@@ -2,7 +2,11 @@
 
 Excel・CSVの整理、公開情報リサーチ、集計自動化などの自主制作物を紹介するポートフォリオサイトです。
 
-[公開サイトを見る](https://sho-ailab.com)![shoのAI活用研究室](https://sho-ailab.com/og-ai-lab.png)
+[公開サイトを見る](https://sho-ailab.com/)
+
+![shoのAI活用研究室](https://sho-ailab.com/og-ai-lab.png)
+
+現在の公式サイトはCloudflareで公開しています。このリポジトリのアプリコードは移行前の版です。最新の掲載内容は公式サイトをご覧ください。以下はこのリポジトリの初期構成・実行手順です。
 
 ## 主な内容
 
@@ -19,7 +23,7 @@ Excel・CSVの整理、公開情報リサーチ、集計自動化などの自主
 - Next.js 16 / React 19 / TypeScript
 - HTML / CSS
 - Node.js Test Runner
-- Vercel
+- Vercel（初期公開時）
 
 ## ローカル実行
 
