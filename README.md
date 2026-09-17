@@ -2,7 +2,7 @@
 
 Excel・CSVの整理、公開情報リサーチ、集計自動化などの自主制作物を紹介するポートフォリオサイトです。
 
-[公開サイトを見る](https://sho-design-site.vercel.app)
+[公開サイトを見る](https://sho-ailab.com)
 
 ![shoの業務自動化研究室](public/og.png)
 
